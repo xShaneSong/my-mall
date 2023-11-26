@@ -16,14 +16,14 @@ class MyMallApplicationTests {
 	void contextLoads() {
 	}
 
-	// @Autowired
-	// private DataSource defaultDataSource;
+	@Autowired
+	private DataSource defaultDataSource;
 
-	// @Test
-	// public void datasourceTest() throws SQLException {
-	// 	Connection connection = defaultDataSource.getConnection();
-	// 	System.out.println("Get Connection:");
-	// 	System.out.println(connection != null);
-	// }
+	@Test
+	public void datasourceTest() throws SQLException {
+		Connection connection = defaultDataSource.getConnection();
+		System.out.println("Get Connection:");
+		System.out.println(connection != null);
+	}
 
 }
