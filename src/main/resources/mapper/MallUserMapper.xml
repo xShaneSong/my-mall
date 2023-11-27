@@ -7,7 +7,7 @@
         <id column="user_id" jdbcType="BIGINT" property="userId" />
         <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
         <result column="login_name" jdbcType="VARCHAR" property="loginName" />
-        <result column="passwrod_md5" jdbcType="VARCHAR" property="passwordMd5" />
+        <result column="password_md5" jdbcType="VARCHAR" property="passwordMd5" />
         <result column="introduce_sign" jdbcType="VARCHAR" property="introduceSign" />
         <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
         <result column="locked_flag" jdbcType="TINYINT" property="lockedFlag" />
@@ -15,12 +15,13 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-    user_id, nick_name, login_name, passwrod_md5, introduce_sign, is_deleted, locked_flag, create_time
+    user_id, nick_name, login_name, password_md5, introduce_sign, is_deleted, locked_flag, create_time
     </sql>
+
     <select id="selectByLoginNameAndPassword" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"/>
-    from tb_my_mall_user
-    where login_name = #{loginName} and passwrod_md5 = #{passwordMd5} and is_deleted = 0
+        select
+        <include refid="Base_Column_List"/>
+        from tb_my_mall_user
+        where login_name = #{loginName} and password_md5 = #{password} and is_deleted = 0
     </select>
 </mapper>

@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 
 public class SystemUtils {
-        public static String genToken(String src) {
+    public static String genToken(String src) {
         if (null == src || "".equals(src)) {
             return null;
         }

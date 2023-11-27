@@ -1,4 +1,4 @@
-package com.example.mall.mymall.impl;
+package com.example.mall.mymall.service.impl;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import com.example.mall.mymall.common.ServiceResultEnum;
 import com.example.mall.mymall.entity.MallUser;
 import com.example.mall.mymall.entity.MallUserToken;
 import com.example.mall.mymall.mapper.MallUserMapper;
-import com.example.mall.mymall.mapper.MyMallUserTokenMapper;
+import com.example.mall.mymall.mapper.MallUserTokenMapper;
 import com.example.mall.mymall.service.MyMallUserService;
 import com.example.mall.mymall.utils.NumberUtils;
 import com.example.mall.mymall.utils.SystemUtils;
@@ -19,7 +19,7 @@ public class MyMallUserServiceImpl implements MyMallUserService {
     @Autowired
     private MallUserMapper mallUserMapper;
     @Autowired
-    private MyMallUserTokenMapper mallUserTokenMapper;
+    private MallUserTokenMapper mallUserTokenMapper;
 
     @Override
     public String login(String loginName, String passwordMd5) {
