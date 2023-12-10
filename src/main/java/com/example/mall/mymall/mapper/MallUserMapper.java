@@ -8,4 +8,6 @@ public interface MallUserMapper {
     MallUser selectByLoginNameAndPassword(
         @Param("loginName") String loginName,
         @Param("password") String password);
+    
+    MallUser selectByPrimaryKey(Long userId);
 }

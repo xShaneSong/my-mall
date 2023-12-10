@@ -1,4 +1,4 @@
-package com.example.mall.mymall.api;
+package com.example.mall.mymall.api.param;
 
 import java.io.Serializable;
 

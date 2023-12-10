@@ -5,6 +5,8 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.mall.mymall.api.param.MallUserUpdateParam;
+import com.example.mall.mymall.common.MallException;
 import com.example.mall.mymall.common.ServiceResultEnum;
 import com.example.mall.mymall.entity.MallUser;
 import com.example.mall.mymall.entity.MallUserToken;
@@ -51,6 +53,31 @@ public class MyMallUserServiceImpl implements MyMallUserService {
             }
         }
         return ServiceResultEnum.LOGIN_ERROR.getResult(); 
+    }
+
+    @Override
+    public Boolean logout(Long userId) {
+        // return mallUserTokenMapper.deleteByPrimaryKey(userId) > 0;
+        return false;
+    }
+
+    @Override
+    public Boolean updateUserInfo(MallUserUpdateParam mallUser, Long userId) {
+        // MallUser user = mallUserMapper.selectByPrimaryKey(userId);
+        // if (user == null) {
+        //     MallException.fail(ServiceResultEnum.DATA_NOT_EXIST.getResult());
+        // }
+        // user.setNickName(mallUser.getNickName());
+        // //user.setPasswordMd5(mallUser.getPasswordMd5());
+        // //若密码为空字符，则表明用户不打算修改密码，使用原密码保存
+        // if (!MD5Util.MD5Encode("", "UTF-8").equals(mallUser.getPasswordMd5())){
+        //     user.setPasswordMd5(mallUser.getPasswordMd5());
+        // }
+        // user.setIntroduceSign(mallUser.getIntroduceSign());
+        // if (mallUserMapper.updateByPrimaryKeySelective(user) > 0) {
+        //     return true;
+        // }
+        return false;
     }
 
     private String getNewToken(String timeString, long userId) {
